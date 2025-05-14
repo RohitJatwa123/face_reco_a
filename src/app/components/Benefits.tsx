@@ -90,10 +90,8 @@ export default function Benefits() {
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
-              className="bg-gradient-to-b from-gray-900/80 to-blue-950/80 border border-blue-800 shadow-lg h-80 min-w-[260px] px-10 py-8 flex flex-col items-center text-center cursor-pointer hover:rounded-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/40 hover:border-blue-400" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}} whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0], transition: { duration: 0.4, ease: 'easeInOut' } }}
-      whileTap={{ scale: 0.9, rotate: [0, -2, 2, -2, 0] }}
-              whileHover={{ y: -30, x: 30, boxShadow: "0px 16px 48px 0px rgba(0,0,0,0.6)", transition: { type: "spring", stiffness: 400, damping: 15 } }}
-              whileTap={{ y: 15, x: -15 }}
+              className="bg-gradient-to-b from-gray-900/80 to-blue-950/80 border border-blue-800 shadow-lg h-80 min-w-[260px] px-10 py-8 flex flex-col items-center text-center cursor-pointer hover:rounded-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/40 hover:border-blue-400" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}} whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0], y: -30, x: 30, boxShadow: "0px 16px 48px 0px rgba(0,0,0,0.6)", transition: { type: "spring", stiffness: 400, damping: 15, duration: 0.4, ease: 'easeInOut' } }}
+      whileTap={{ scale: 0.9, rotate: [0, -2, 2, -2, 0], y: 15, x: -15 }}
               transition={{ type: "spring", stiffness: 400, damping: 15, mass: 0.5 }}
             >
               {feature.icon}

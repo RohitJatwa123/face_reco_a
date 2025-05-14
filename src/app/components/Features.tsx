@@ -1,9 +1,9 @@
 'use client' 
  
- import { motion } from 'framer-motion' 
- import { FaUserShield, FaClock, FaChartLine, FaRobot } from 'react-icons/fa' 
- 
- const features = [ 
+ import { motion } from 'framer-motion'
+import { FaUserShield, FaClock, FaChartLine, FaRobot } from 'react-icons/fa'
+
+const features = [ 
    { 
      icon: <FaUserShield className="w-8 h-8 text-blue-500" />, 
      title: "Enhanced Security", 
@@ -26,9 +26,35 @@
    } 
  ] 
  
- export default function Features() { 
-   return ( 
-     <section id="features" className="relative py-32 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden"> 
+ export default function Features() {
+  return (
+    <section id="features" className="relative py-32 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="container mx-auto px-8 relative z-10 flex flex-col items-center"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gray-800/50 p-6 rounded-xl border border-blue-500/10 hover:border-blue-500/40 transition-all duration-300"
+            >
+              <div className="flex flex-col items-center text-center">
+                {feature.icon}
+                <h3 className="text-2xl font-bold text-white mt-4 mb-2">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div> 
        {/* Decorative background circles */} 
        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-3xl pointer-events-none" /> 
        <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-3xl pointer-events-none" /> 

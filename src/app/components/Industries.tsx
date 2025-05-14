@@ -80,7 +80,7 @@ export default function Industries() {
               key={index}
               initial={{ opacity: 0, x: -50 }} // Changed from y: 20 to x: -50 for side slide
               whileInView={{ opacity: 1, x: 0 }} // Changed from y: 0 to x: 0 for side slide
-              whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0], y: -10, transition: { duration: 0.3, ease: 'easeInOut' } }}
+              whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0], y: -30, x: 30, boxShadow: "0px 16px 48px 0px rgba(0,0,0,0.6)", transition: { type: "spring", stiffness: 400, damping: 15, duration: 0.4, ease: 'easeInOut' } }}
               transition={{ duration: 0.5, delay: index * 0.15 }} // Adjusted duration and delay for a smoother staggered slide
               viewport={{ once: true }}
               className="bg-gray-800/50 backdrop-blur-sm p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20" style={{clipPath: 'polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)'}} whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0], y: -10, transition: { duration: 0.3, ease: 'easeInOut' } }}
