@@ -6,7 +6,7 @@ import React from "react"
 
 const features = [
   {
-    icon: <FaUserClock className="w-12 h-12 text-blue-400 mx-auto mb-4" />,
+    icon: <FaUserClock className="w-12 h-12 text-blue-400 mx-auto mb-4 group-hover:scale-110 group-hover:text-blue-300 transition-all duration-300" />,
     title: "Multi-Person Recognition",
     description: (
       <>
@@ -16,7 +16,7 @@ const features = [
     )
   },
   {
-    icon: <FaCamera className="w-12 h-12 text-green-400 mxuto mb-4" />,
+    icon: <FaCamera className="w-12 h-12 text-green-400 mx-auto mb-4 group-hover:scale-110 group-hover:text-green-300 transition-all duration-300" />,
     title: "Video-Based Recognition",
     description: (
       <>
@@ -26,7 +26,7 @@ const features = [
     )
   },
   {
-    icon: <FaDatabase className="w-12 h-12 text-yellow-400 mx-auto mb-4" />,
+    icon: <FaDatabase className="w-12 h-12 text-yellow-400 mx-auto mb-4 group-hover:scale-110 group-hover:text-yellow-300 transition-all duration-300" />,
     title: "Automatic Data Storage",
     description: (
       <>
@@ -36,7 +36,7 @@ const features = [
     )
   },
   {
-    icon: <FaCubes className="w-12 h-12 text-pink-400 mx-auto mb-4" />,
+    icon: <FaCubes className="w-12 h-12 text-pink-400 mx-auto mb-4 group-hover:scale-110 group-hover:text-pink-300 transition-all duration-300" />,
     title: "Modular and Scalable Design",
     description: (
       <>
@@ -46,7 +46,7 @@ const features = [
     )
   },
   {
-    icon: <FaUserEdit className="w-12 h-12 text-indigo-400 mx-auto mb-4" />,
+    icon: <FaUserEdit className="w-12 h-12 text-indigo-400 mx-auto mb-4 group-hover:scale-110 group-hover:text-indigo-300 transition-all duration-300" />,
     title: "Facial Measurement Analysis",
     description: (
       <>
@@ -56,7 +56,7 @@ const features = [
     )
   },
   {
-    icon: <FaUserClock className="w-12 h-12 text-teal-400 mx-auto mb-4" />,
+    icon: <FaUserClock className="w-12 h-12 text-teal-400 mx-auto mb-4 group-hover:scale-110 group-hover:text-teal-300 transition-all duration-300" />,
     title: "Interactive Training Workflow",
     description: (
       <>
@@ -70,9 +70,32 @@ const features = [
 export default function Benefits() {
   return (
     <section className="relative py-32 md:py-40 bg-gradient-to-br from-black via-gray-900 to-blue-950 overflow-hidden">
-      {/* Decorative blurred shapes */}
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-blue-800/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-purple-800/30 rounded-full blur-3xl pointer-events-none" />
+      {/* Decorative blurred shapes with animation */}
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2] 
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-blue-800/30 rounded-full blur-3xl pointer-events-none" 
+      />
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.2, 0.3, 0.2] 
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse",
+          delay: 4
+        }}
+        className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-purple-800/30 rounded-full blur-3xl pointer-events-none" 
+      />
 
       <div className="container mx-auto px-4 md:px-12 lg:px-24 relative z-10 flex flex-col items-center">
         <motion.div
@@ -82,7 +105,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           className="mb-16 md:mb-24 max-w-3xl text-center self-center"
         >
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4 md:mb-6 tracking-tight drop-shadow-lg">
+          <h2 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-4 md:mb-6 tracking-tight drop-shadow-lg">
             Key Features
           </h2>
         </motion.div>
@@ -90,13 +113,43 @@ export default function Benefits() {
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
-              className="bg-gradient-to-b from-gray-900/80 to-blue-950/80 border border-blue-800 shadow-lg h-80 min-w-[260px] px-10 py-8 flex flex-col items-center text-center cursor-pointer hover:rounded-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/40 hover:border-blue-400" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'}} whileHover={{ scale: 1.1, rotate: [0, -5, 5, -5, 0], y: -30, x: 30, boxShadow: "0px 16px 48px 0px rgba(0,0,0,0.6)", transition: { type: "spring", stiffness: 400, damping: 15, duration: 0.4, ease: 'easeInOut' } }}
-      whileTap={{ scale: 0.9, rotate: [0, -2, 2, -2, 0], y: 15, x: -15 }}
-              transition={{ type: "spring", stiffness: 400, damping: 15, mass: 0.5 }}
+              className="group bg-gradient-to-b from-gray-900/80 to-blue-950/80 border border-blue-800/50 shadow-lg h-80 min-w-[260px] px-10 py-8 flex flex-col items-center text-center cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/40 hover:border-blue-400/80 backdrop-blur-sm"
+              style={{
+                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+              }}
+              whileHover={{ 
+                scale: 1.05,
+                y: -10,
+                transition: { 
+                  type: "spring", 
+                  stiffness: 400, 
+                  damping: 15 
+                }
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ 
+                opacity: 1, 
+                y: 0,
+                transition: {
+                  delay: idx * 0.1
+                }
+              }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                whileHover={{ 
+                  rotate: [0, -10, 10, -10, 0],
+                  transition: { duration: 0.5 }
+                }}
             >
               {feature.icon}
-              <h3 className="text-xl font-bold text-white mb-2 hover:text-glow hover:scale-105 transition-all duration-300 animate-pulse hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent hover:animate-wiggle">{feature.title}</h3>
-              <div className="text-gray-300 text-base hover:text-glow hover:scale-105 transition-all duration-300 animate-pulse hover:bg-gradient-to-r hover:from-green-400 hover:to-teal-400 hover:bg-clip-text hover:text-transparent hover:animate-wiggle">{feature.description}</div>
+              </motion.div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                {feature.title}
+              </h3>
+              <div className="text-gray-300 text-base group-hover:text-white transition-all duration-300">
+                {feature.description}
+              </div>
             </motion.div>
           ))}
         </div>

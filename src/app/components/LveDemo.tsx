@@ -1,74 +1,96 @@
-'use client';
+'use client'
 
-import { motion } from 'framer-motion';
-// import { CameraIcon } from '@heroicons/react/24/outline';
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
-export default function LiveDemoSection() {
+export default function LveDemo() {
+  const [isProcessing, setIsProcessing] = useState(false)
+
   return (
-    <section className="py-24 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 animate-pulse"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative py-20 bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 overflow-hidden">
+      {/* Animated background elements */}
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1] 
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        className="absolute top-0 left-0 w-[800px] h-[800px] bg-purple-700/10 rounded-full blur-3xl pointer-events-none" 
+      />
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1] 
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse",
+          delay: 4
+        }}
+        className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-blue-700/10 rounded-full blur-3xl pointer-events-none" 
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold sm:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 animate-gradient">
+          <h2 className="text-4xl md:text-5xl font-bold text-pink-400 mb-4">
             Try It Yourself
           </h2>
-          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Experience our face recognition technology in action
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl p-8 shadow-[0_0_50px_rgba(168,85,247,0.15)] backdrop-blur-sm border border-purple-500/20"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center mb-8 relative overflow-hidden group border border-purple-500/20">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="text-center relative z-10">
-                {/* <CameraIcon className="w-16 h-16 text-purple-400 mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300" /> */}
-                <p className="text-blue-200">Camera feed will appear here</p>
-              </div>
-            </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-800/50"
+        >
+          {/* Camera Feed Container */}
+          <div className="aspect-video mb-6 bg-gray-950/80 rounded-xl flex items-center justify-center overflow-hidden">
+            <p className="text-gray-500">Camera feed will appear here</p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button 
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* <CameraIcon className="w-5 h-5" /> */}
-                Start Camera
-              </motion.button>
-              <motion.button 
-                className="px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg font-semibold border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300 shadow-lg shadow-purple-500/10 hover:shadow-purple-500/20"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Upload Image
-              </motion.button>
-            </div>
+          {/* Controls */}
+          <div className="flex justify-center gap-4 mb-6">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg font-medium hover:from-purple-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
+              Start Camera
+            </motion.button>
+            
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            >
+              Upload Image
+            </motion.button>
+          </div>
 
-            <div className="mt-8 p-4 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-lg border border-purple-500/20 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">Detection Results</h3>
-              <p className="text-blue-200/70">No faces detected yet. Start the camera or upload an image to begin.</p>
-            </div>
-          </motion.div>
-        </div>
+          {/* Detection Results */}
+          <div className="bg-gray-950/50 rounded-xl p-4">
+            <h3 className="text-purple-400 font-medium mb-2">Detection Results</h3>
+            <p className="text-gray-400 text-sm">
+              No faces detected yet. Start the camera or upload an image to begin.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
-  );
+  )
 }
-
-// Remove the duplicate export default function Page() from this file.
-// To use LiveDemoSection, import and use it in your page file (e.g., page.tsx).
