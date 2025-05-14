@@ -74,7 +74,7 @@ export default function HeroSection() {
     <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-950 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://miro.medium.com/v2/resize:fit:1200/1*4Tr0FOsdUgkF32T3mdu6pg.gif"
+          src="https://wphelp.blog/wp-content/uploads/2020/07/face-recog-header.gif"
           alt="Hero Background Animation"
           fill
           style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -109,7 +109,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-10"
           >
-            Secure, accurate, and lightning-fast facial recognition for businesses and developers
+            Reliable, precise, and ultra-fast facial recognition built for modern enterprises and developers
           </motion.p>
           
           <motion.div

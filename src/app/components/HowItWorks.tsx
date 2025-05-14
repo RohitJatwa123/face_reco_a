@@ -36,7 +36,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How It Works</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 p-2 border-2 border-transparent bg-clip-padding bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">How It Works</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Simple integration with powerful results. Get started in just a few steps.
           </p>
@@ -51,11 +51,13 @@ export default function HowItWorks() {
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05, rotate: [0, -2, 2, -2, 0], transition: { duration: 0.3, ease: 'easeInOut' } }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="relative"
+                className="relative cursor-pointer"
               >
-                <div className="flex flex-col items-center text-center p-8 bg-gray-800/40 rounded-2xl backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center p-8 bg-gray-800/40 backdrop-blur-sm border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 animate-[border-pulse_2s_ease-in-out_infinite] hover:animate-[border-pulse_1s_ease-in-out_infinite] h-full hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20" style={{clipPath: 'polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%)'}}>
                   <div className={`mb-6 p-5 bg-gradient-to-br ${
                     index === 0 ? 'from-blue-500 to-blue-600' :
                     index === 1 ? 'from-purple-500 to-purple-600' :
@@ -64,8 +66,8 @@ export default function HowItWorks() {
                   } rounded-2xl shadow-lg`}>
                     <div className="text-white">{step.icon}</div>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">{step.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-semibold text-white mb-4 hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:bg-clip-text hover:text-transparent transition-all duration-300">{step.title}</h3>
+                  <p className="text-gray-300 leading-relaxed hover:text-white hover:scale-105 transition-all duration-300">{step.description}</p>
                 </div>
                 
                 {index < steps.length - 1 && (

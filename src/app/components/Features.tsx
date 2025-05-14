@@ -34,43 +34,7 @@
        <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-3xl pointer-events-none" /> 
  
        <div className="container mx-auto px-8 relative z-10 flex flex-col items-center"> 
-         <motion.div 
-           initial={{ opacity: 0, y: 40 }} 
-           whileInView={{ opacity: 1, y: 0 }} 
-           transition={{ duration: 0.7 }} 
-           viewport={{ once: true }} 
-           className="text-center mb-24 max-w-3xl" 
-         > 
-           <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight"> 
-             Powerful Features 
-           </h2> 
-           <p className="text-2xl text-gray-300"> 
-             Our face recognition system comes packed with everything you need for secure and efficient identity verification. 
-           </p> 
-         </motion.div> 
- 
-         Horizontal features layout 
-         <div className="flex flex-col items-center w-full"> 
-           <div className="flex flex-col md:flex-row justify-start md:justify-center gap-12 w-full max-w-5xl md:ml-0"> 
-             {features.map((feature, index) => ( 
-               <motion.div 
-                 key={index} 
-                 initial={{ opacity: 0, y: 40 }} 
-                 whileInView={{ opacity: 1, y: 0 }} 
-                 whileHover={{ y: -10, transition: { duration: 0.3 } }} 
-                 transition={{ duration: 0.6, delay: index * 0.15 }} 
-                 viewport={{ once: true }} 
-                 className="flex flex-col items-center bg-gray-900 rounded-2xl shadow-lg border-2 border-blue-500/10 px-8 py-10 w-full md:w-1/4 cursor-pointer" 
-               > 
-                 <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gray-800 mb-4"> 
-                   {feature.icon} 
-                 </div> 
-                 <h3 className="text-xl font-bold text-white mb-2 text-center">{feature.title}</h3> 
-                 <p className="text-base text-gray-300 text-center">{feature.description}</p> 
-               </motion.div> 
-             ))} 
-           </div> 
-         </div> 
+  
  
          {/* Industry Use Cases 
          <div className="mt-24 w-full max-w-4xl mx-auto"> 
