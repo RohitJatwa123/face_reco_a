@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function LveDemo() {
-  const [isProcessing, setIsProcessing] = useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isProcessing, setIsProcessing] = useState(false);
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 overflow-hidden">
