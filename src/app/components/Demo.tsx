@@ -6,7 +6,7 @@ export default function Demo() {
   return (
     <section
       id="demo"
-      className="relative py-20 min-h-[600px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden flex items-center"
+      className="relative py-20 min-h-[600px] bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 overflow-hidden flex items-center"
       style={{
         backgroundImage:
           "linear-gradient(to bottom right, rgba(17,24,39,0.7), rgba(17,24,39,0.9)), url('https://cdn.dribbble.com/userupload/40678226/file/original-cdbfe62c60f5e44b0faf7f71521ccb24.gif')",
@@ -15,27 +15,31 @@ export default function Demo() {
       }}
     >
       {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-48 h-48 border-2 border-blue-500/30 rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 4,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
-      </div>
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1] 
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        className="absolute top-0 left-0 w-[800px] h-[800px] bg-purple-700/10 rounded-full blur-3xl pointer-events-none" 
+      />
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1] 
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse",
+          delay: 4
+        }}
+        className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-blue-700/10 rounded-full blur-3xl pointer-events-none" 
+      />
 
       <div className="w-full flex flex-col lg:flex-row items-center gap-16 relative z-10 px-6">
         <div className="flex-1" />
@@ -46,7 +50,7 @@ export default function Demo() {
           viewport={{ once: true }}
           className="lg:w-1/2 lg:pr-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight cursor-pointer hover:opacity-80 transition-opacity" onClick={() => window.location.href = '#demo'}>
             Instant Recognition,<br />
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Real-time Analysis

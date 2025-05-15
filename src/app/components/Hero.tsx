@@ -121,9 +121,9 @@ export default function HeroSection() {
             <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg">
               Get Started
             </button>
-            <button className="px-8 py-4 bg-transparent border border-blue-400 hover:bg-blue-900/30 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105">
+            <a href="#try-it-yourself" className="px-8 py-4 bg-transparent border border-blue-400 hover:bg-blue-900/30 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 inline-block">
               Live Demo
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>

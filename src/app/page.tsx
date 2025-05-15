@@ -8,7 +8,7 @@ import HowItWorks from './components/HowItWorks'
 import Benefits from './components/Benefits'
 // import Industries from './components/Industries'
 import Demo from './components/Demo'
-import LiveDemoSection from './components/LveDemo';
+import LiveDemoSection from './components/LiveDemo';
 import { animateScroll as scroll } from 'react-scroll'
 import Industries from './components/Industries'
 
