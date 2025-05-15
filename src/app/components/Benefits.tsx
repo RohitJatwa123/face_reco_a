@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaUserClock, FaUserEdit, FaCamera, FaDatabase, FaCubes } from 'react-icons/fa' // Removed FaChartBar, FaShieldAlt
+ // Removed FaChartBar, FaShieldAlt
 import React from "react"
 
 
