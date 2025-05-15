@@ -67,7 +67,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="relative py-32 md:py-40 bg-gradient-to-br from-black via-gray-900 to-blue-950 overflow-hidden">
+    <section id="features" className="relative py-32 md:py-40 bg-gradient-to-br from-black via-gray-900 to-blue-950 overflow-hidden">
       <motion.div 
         animate={{ 
           scale: [1, 1.2, 1],

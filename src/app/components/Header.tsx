@@ -64,10 +64,10 @@ export default function Header() {
                 whileTap={{ y: 0, scale: 0.95 }}
               >
                 <Link 
-                  href={link === 'home' ? '#hero-section' : link === 'key-features' ? '#key-features' : link === 'live-demo' ? '#try-it-yourself' : link === 'industries' ? '#industries' : `#${link}`}
+                  href={link === 'home' ? '#hero-section' : link === 'key-features' ? '#features' : link === 'live-demo' ? '#try-it-yourself' : link === 'industries' ? '#industries' : `#${link}`}
                   className={`relative text-sm font-medium tracking-wide ${activeSection === link ? 'text-white' : 'text-purple-300'} hover:text-white transition-colors duration-300`}
                   onMouseEnter={() => {
-                    const section = document.getElementById(link === 'home' ? 'hero-section' : link === 'key-features' ? 'key-features' : link === 'live-demo' ? 'try-it-yourself' : link === 'industries' ? 'industries' : link);
+                    const section = document.getElementById(link === 'home' ? 'hero-section' : link === 'key-features' ? 'features' : link === 'live-demo' ? 'try-it-yourself' : link === 'industries' ? 'industries' : link);
                     if (section) {
                       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
