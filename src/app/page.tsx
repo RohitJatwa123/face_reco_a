@@ -3,14 +3,14 @@
 import { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
-// import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
+import Features from './components/Features'
 import Benefits from './components/Benefits'
-// import Industries from './components/Industries'
+import Industries from './components/Industries'
 import Demo from './components/Demo'
 import LiveDemoSection from './components/LiveDemo';
 import { animateScroll as scroll } from 'react-scroll'
-import Industries from './components/Industries'
+// import Industries from './components/Industries'
 
 export default function Home() {
   useEffect(() => {
@@ -26,8 +26,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        {/* <Features /> */}
+       
         <HowItWorks />
+        <Features />
         <Benefits />
         <Industries/>
         <Demo />

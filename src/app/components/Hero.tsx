@@ -1,67 +1,3 @@
-// 'use client'
-
-// import { motion } from 'framer-motion'
-// import { FaArrowRight } from 'react-icons/fa'
-
-// export default function Hero() {
-//   return (
-//     <section className="relative py-32 md:py-48 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900">
-//       {/* GIF Background */}
-//       <div className="absolute inset-0 opacity-20">
-//         <img 
-//           src="https://wphelp.blog/wp-content/uploads/2020/07/face-recog-header.gif" 
-//           alt="Face recognition animation"
-//           className="w-full h-full object-cover object-center"
-//         />
-//       </div>
-
-//       {/* Animated gradient overlay */}
-//       <div className="absolute inset-0 opacity-40 [background:radial-gradient(125%_125%_at_50%_10%,#1a1a1a_40%,#0f6fff_100%)]" />
-      
-//       {/* Grid overlay */}
-//       <div className="absolute inset-0 opacity-50">
-//         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-//       </div>
-
-//       <div className="container mx-auto px-8 relative z-10">
-//         <div className="max-w-4xl mx-auto text-center">
-//           <motion.h1 
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8 }}
-//             className="text-5xl md:text-7xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent leading-tight"
-//           >
-//             Advanced Face Recognition for the Modern World
-//           </motion.h1>
-          
-//           <motion.p 
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.2 }}
-//             className="text-2xl md:text-3xl text-gray-300 mb-16 leading-relaxed"
-//           >
-//             Secure, accurate, and lightning-fast facial recognition technology powered by AI.
-//           </motion.p>
-          
-//           <motion.div
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.4 }}
-//           >
-//             <button className="group relative inline-flex items-center justify-center px-12 py-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-xl font-semibold text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20">
-//               <span className="text-white">Get Started</span>
-//               <FaArrowRight className="ml-3 text-white group-hover:translate-x-1 transition-transform" />
-//               <div className="absolute inset-0 border border-purple-400/30 rounded-xl group-hover:border-purple-400/50 transition-all" />
-//             </button>
-//           </motion.div>
-//         </div>
-//       </div>
-
-//       {/* Bottom gradient fade */}
-//       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
-//     </section>
-//   )
-// }
 
 'use client'
 
@@ -71,7 +7,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-950 overflow-hidden">
+    <section id="hero-section" className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-950 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="https://wphelp.blog/wp-content/uploads/2020/07/face-recog-header.gif"

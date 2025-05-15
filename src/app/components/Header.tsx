@@ -13,7 +13,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'how-it-works', 'key-features', 'industry', 'live-demo']
+      const sections = ['header', 'how-it-works', 'key-features', 'industries', 'live-demo']
       const scrollPosition = window.scrollY
 
       setIsScrolled(scrollPosition > 50)
@@ -57,17 +57,17 @@ export default function Header() {
           </motion.div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            {['home', 'how-it-works', 'key-features', 'industry', 'live-demo'].map((link) => (
+            {['home', 'how-it-works', 'key-features', 'industries', 'live-demo'].map((link) => (
               <motion.div
                 key={link}
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ y: 0, scale: 0.95 }}
               >
                 <Link 
-                  href={link === 'key-features' ? '#benefits' : link === 'live-demo' ? '#try-it-yourself' : `#${link}`}
+                  href={link === 'home' ? '#hero-section' : link === 'key-features' ? '#key-features' : link === 'live-demo' ? '#try-it-yourself' : link === 'industries' ? '#industries' : `#${link}`}
                   className={`relative text-sm font-medium tracking-wide ${activeSection === link ? 'text-white' : 'text-purple-300'} hover:text-white transition-colors duration-300`}
                   onMouseEnter={() => {
-                    const section = document.getElementById(link === 'key-features' ? 'benefits' : link === 'live-demo' ? 'try-it-yourself' : link);
+                    const section = document.getElementById(link === 'home' ? 'hero-section' : link === 'key-features' ? 'key-features' : link === 'live-demo' ? 'try-it-yourself' : link === 'industries' ? 'industries' : link);
                     if (section) {
                       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
